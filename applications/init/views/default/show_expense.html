@@ -1,0 +1,39 @@
+{{extend 'layout.html'}}
+<h3 class="text-center lead"><strong>支出信息表</strong></h3> 
+<div class="row">
+<div class="col-md-10">
+<table class="table table-hover table-bordered "> 
+    <thead > 
+        {{for head in expense_head:}}
+	<th class="text-center success">{{=head}}</th> 
+	{{pass}}
+    </thead> 
+    <tbody> 
+    	{{for page in expense:}}
+        <tr class="text-center"> 
+	{{i=0}}
+	{{while i < len(page)-1:}}
+	    <td>{{=page[i]}}</td> 
+	    {{i+=1}}
+	    {{pass}}
+	    {{if page[8]!=username and page[10]=='未审核':}}
+	    <td> {{=A('同意',_href=URL("consent",args=page[14]))}} </td>
+	    <td> {{=A('拒绝',_href=URL("repulse",args=page[14]))}} </td>
+	    <td> {{=A('核定',_href=URL("advice",args=page[14]))}} </td>
+	    {{pass}}
+	    {{if page[8]==username and page[10]=='未审核':}}
+	    <td>还木有审批</td>
+	    {{pass}}
+	    {{if page[8]==username and page[10]=='拒绝':}}
+	    <td> {{=A('重新提交',_href=URL("resubmit",args=page[12]))}} </td>
+	    {{pass}}
+	</tr>
+	{{pass}}
+	<p class="text-info">共计{{=len(expense)}}条记录</p>
+</table>
+</div>
+<div class="col-md-2">
+{{=form}}
+<em>如下载的数据不完整,请ctrl+a进行复制后,手工粘贴到excel表格.</em>
+</div>
+</div>

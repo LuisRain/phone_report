@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+	<h5>说明:<br />
+	1、登录人数:截止目前<b>当月</b>有过登录记录的人数.<br />
+	2、数据每天上午10点前更新，每天更新一次.</h5>
+	<h6 class="text-right">报表时间:{{=request.now.strftime("%Y-%m-%d %H:%M")}}</h6>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+                {{rank=1}}
+                {{for sensus in result:}}
+                    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                        {{pass}}
+                    {{i=0}}
+                    {{while i < len(sensus)-1:}}
+                        {{if i==5 :}}
+                            <td>{{=A(sensus[i],_href=URL('taixx_aracde/461',args=sensus[-1]))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i] or 0}}</td>
+                        {{pass}}
+                        {{i+=1}}
+                    {{pass}}
+                    </tr>
+                {{pass}}
+            </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

@@ -1,0 +1,588 @@
+timestamp: 2017-08-14T08:45:05.436394
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.449824
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.461566
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.484855
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.493420
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.502081
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.511202
+CREATE TABLE `report_team`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `name` VARCHAR(50),
+    `created_on` DATETIME,
+    `ipaddr` VARCHAR(50),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.518844
+CREATE TABLE `report_list`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `team_id` VARCHAR(50),
+    `name_zh` VARCHAR(512),
+    `name` VARCHAR(100),
+    `priority` INTEGER,
+    `date_to` DATE,
+    `created_on` DATETIME,
+    `ipaddr` VARCHAR(50),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:45:05.528236
+CREATE TABLE `report_visitor`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `report_id` INTEGER,
+    `user_name` VARCHAR(20),
+    `open_id` VARCHAR(100),
+    `visit_time` DATETIME,
+    `ipaddr` VARCHAR(50),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:54:48.476832
+CREATE TABLE `comments`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `report_id` INTEGER,
+    `user_name` VARCHAR(20),
+    `star` VARCHAR(5),
+    `usercomment` LONGTEXT,
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T08:56:33.771537
+CREATE TABLE `replies`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `comment_id` VARCHAR(10),
+    `replied` LONGTEXT,
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T09:26:22.822707
+CREATE TABLE `msg_info`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `report_id` INTEGER,
+    `msg` LONGTEXT,
+    `definesql` LONGTEXT,
+    `category` VARCHAR(100),
+    `branch` VARCHAR(100),
+    `aracde` VARCHAR(100),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T09:26:22.847053
+CREATE TABLE `aracde_list`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(20),
+    `branch_name` VARCHAR(20),
+    `aracde` VARCHAR(20),
+    `aracde_name` VARCHAR(20),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T09:29:06.011116
+CREATE TABLE `aracde`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(20),
+    `branch_name` VARCHAR(20),
+    `aracde` VARCHAR(20),
+    `aracde_name` VARCHAR(20),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T09:29:06.028903
+CREATE TABLE `custom_msg`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `msg_id` VARCHAR(50),
+    `oa` VARCHAR(50),
+    `sendtime` TIME,
+    `status` VARCHAR(1),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:06:50.554233
+CREATE TABLE `ipe_hpad`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:09:24.740011
+CREATE TABLE `ipe_hpad_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:09:24.776047
+CREATE TABLE `ipe_rtrn`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:09:24.787145
+CREATE TABLE `ipe_rtrn_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:11:23.181483
+CREATE TABLE `ipe_acct`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T13:11:23.197178
+CREATE TABLE `ipe_acct_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T14:18:22.603655
+CREATE TABLE `kpi`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `category` VARCHAR(10),
+    `series` VARCHAR(10),
+    `branch` VARCHAR(10),
+    `aracde` VARCHAR(30),
+    `kpi_name` VARCHAR(30),
+    `kpi_mon` NUMERIC(6,0),
+    `this_mon` NUMERIC(10,2),
+    `last_mon` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T14:20:16.581963
+CREATE TABLE `kpi_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `category` VARCHAR(10),
+    `series` VARCHAR(10),
+    `branch` VARCHAR(10),
+    `aracde` VARCHAR(30),
+    `kpi_name` VARCHAR(30),
+    `kpi_mon` NUMERIC(8,0),
+    `this_mon` NUMERIC(10,2),
+    `last_mon` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:02:08.594871
+CREATE TABLE `ipe_acct`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:02:08.610958
+CREATE TABLE `ipe_acct_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:04:38.442196
+ALTER TABLE `ipe_hpad` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:38.892913
+ALTER TABLE `ipe_hpad` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:04:39.354612
+ALTER TABLE `ipe_hpad_rt` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:39.410673
+ALTER TABLE `ipe_hpad_rt` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:04:39.491442
+ALTER TABLE `ipe_rtrn` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:39.939222
+ALTER TABLE `ipe_rtrn` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:04:40.371752
+ALTER TABLE `ipe_rtrn_rt` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:40.417518
+ALTER TABLE `ipe_rtrn_rt` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:04:40.472250
+ALTER TABLE `ipe_acct` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:40.508259
+ALTER TABLE `ipe_acct` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:04:40.553848
+ALTER TABLE `ipe_acct_rt` ADD `acctamt_std` NUMERIC(10,2);
+success!
+timestamp: 2017-08-14T15:04:40.592067
+ALTER TABLE `ipe_acct_rt` ADD `acctamt` NUMERIC(10,2);
+success!
+success!
+timestamp: 2017-08-14T15:06:03.160456
+CREATE TABLE `ipe_hpad`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:06:03.173054
+CREATE TABLE `ipe_hpad_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:06:03.184035
+CREATE TABLE `ipe_rtrn`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:06:03.195575
+CREATE TABLE `ipe_rtrn_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:06:03.206987
+CREATE TABLE `ipe_acct`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T15:06:03.218338
+CREATE TABLE `ipe_acct_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-14T17:45:39.017225
+ALTER TABLE `comments` DROP COLUMN `star`;
+success!
+timestamp: 2017-08-15T10:29:12.171584
+CREATE TABLE `agntinfo`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `partnum` VARCHAR(8),
+    `partname` VARCHAR(100),
+    `teamnum` VARCHAR(8),
+    `teamname` VARCHAR(100),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(100),
+    `agtype` VARCHAR(4),
+    `dteapp` NUMERIC(8,0),
+    `dtetrm` NUMERIC(8,0),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-15T21:50:03.984420
+CREATE TABLE `ipe_acct_year`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `batc_type` VARCHAR(10),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-16T08:11:16.191581
+CREATE TABLE `ipe_acct`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `batc_type` VARCHAR(10),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-16T08:11:16.212409
+CREATE TABLE `ipe_acct_rt`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `branch` VARCHAR(2),
+    `aracde` VARCHAR(3),
+    `agntnum` VARCHAR(8),
+    `agntname` VARCHAR(20),
+    `agtype` VARCHAR(4),
+    `chdrnum` VARCHAR(8),
+    `trandate` NUMERIC(8,0),
+    `cnttype` VARCHAR(3),
+    `batc_type` VARCHAR(10),
+    `acctamt` NUMERIC(10,2),
+    `acctamt_std` NUMERIC(10,2),
+    `commit_time` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-17T14:20:23.134550
+ALTER TABLE `msg_info` DROP COLUMN `category`;
+success!
+timestamp: 2017-08-17T14:20:23.307665
+ALTER TABLE `msg_info` DROP COLUMN `aracde`;
+success!
+timestamp: 2017-08-17T14:20:23.321989
+ALTER TABLE `msg_info` DROP COLUMN `branch`;
+success!
+timestamp: 2017-08-17T14:20:23.333177
+ALTER TABLE `msg_info` DROP COLUMN `report_id`;
+success!
+timestamp: 2017-08-17T15:07:22.186413
+ALTER TABLE `custom_msg` ADD `msg_id__tmp` INTEGER;
+success!
+UPDATE `custom_msg` SET `msg_id__tmp`=`msg_id`;
+success!
+ALTER TABLE `custom_msg` DROP COLUMN `msg_id`;
+success!
+ALTER TABLE `custom_msg` ADD `msg_id` INTEGER;
+success!
+UPDATE `custom_msg` SET `msg_id`=`msg_id__tmp`;
+success!
+ALTER TABLE `custom_msg` DROP COLUMN `msg_id__tmp`;
+success!
+success!
+timestamp: 2017-08-18T16:05:48.969258
+ALTER TABLE `comments` ADD `issend` VARCHAR(1);
+success!
+success!
+timestamp: 2017-08-18T16:42:09.275044
+ALTER TABLE `replies` ADD `issend` VARCHAR(1);
+success!
+success!
+timestamp: 2017-08-23T18:15:35.157563
+CREATE TABLE `user_aracde`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `oa` VARCHAR(50),
+    `status` VARCHAR(3),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-23T18:21:15.600767
+ALTER TABLE `user_aracde` ADD `aracde` VARCHAR(3);
+success!
+timestamp: 2017-08-23T18:21:15.627972
+ALTER TABLE `user_aracde` DROP COLUMN `status`;
+success!
+timestamp: 2017-08-31T14:22:23.058402
+ALTER TABLE `user_aracde` ADD `oa__tmp` VARCHAR(50) UNIQUE;
+success!
+UPDATE `user_aracde` SET `oa__tmp`=`oa`;
+success!
+ALTER TABLE `user_aracde` DROP COLUMN `oa`;
+success!
+ALTER TABLE `user_aracde` ADD `oa` VARCHAR(50) UNIQUE;
+success!
+UPDATE `user_aracde` SET `oa`=`oa__tmp`;
+success!
+ALTER TABLE `user_aracde` DROP COLUMN `oa__tmp`;
+success!

@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+	<h6 class="text-right">报表时间:{{=request.now.strftime("%Y-%m-%d %H:%M")}}</h6>
+	<h5 class="text-left"></h5>
+	<h5></h5>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+	        {{rank=1}}
+		{{for sensus in result:}}
+		    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                    {{pass}}
+		    {{i=0}}
+		    {{while i < len(sensus)-1:}}
+                        {{if i==1 :}}
+                            <td>{{=A(sensus[i],_href=URL('hdrl_add_list/425',args=[sensus[-1],3000,'sl']))}}</td>
+                        {{elif i==2 :}}
+                            <td>{{=A(sensus[i],_href=URL('hdrl_add_list/425',args=[sensus[-1],3000,'cb']))}}</td>
+                        {{elif i==3 :}}
+                            <td>{{=A(sensus[i],_href=URL('hdrl_add_list/425',args=[sensus[-1],10000,'sl']))}}</td>
+                        {{elif i==4 :}}
+                            <td>{{=A(sensus[i],_href=URL('hdrl_add_list/425',args=[sensus[-1],30000,'sl']))}}</td>
+                        {{elif i==5 :}}
+                            <td>{{=A(sensus[i],_href=URL('hdrl_add_list/425',args=[sensus[-1],50000,'sl']))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i]}}</td>
+                        {{pass}}
+                        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

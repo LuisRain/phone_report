@@ -1,0 +1,69 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+  </div>
+  <div class="col-xs-12">
+  {{comment=True}}
+  {{if comment:}}
+      <div class="panel panel-info">
+	<ul>
+	{{last_comment=['0','']}}
+	{{for comments in pagecomments[:10]:}}
+	    {{if last_comment[0]==comments[0]:}}
+	        <h5 class="text-info">管理员回复:<strong class="text-muted">{{=comments[6].strip()}}</strong><small>{{=' '+comments[7].strftime("%Y-%m-%d %H:%M")}}</small>
+		{{if auth.user and auth.user.username=='it':}}
+		    {{=A('delete',_href=URL('delete_replies',args=comments[8]))}}
+	        {{pass}}
+		</h5>
+	    {{else:}}
+	        {{if comments[2]=="管理员":}}
+	            <li><h5 class="text-danger"><strong>{{=comments[2]}}:{{=comments[3]}}</strong></h5></li>
+		    {{if auth.user and auth.user.username=='it':}}
+		        {{=A('delete',_href=URL('delete_comment',args=comments[0]))}}
+		        {{=A('reply',_href=URL('reply_comment',args=comments[0],vars=dict(content=comments[3])))}}
+	            {{pass}}
+	        {{else:}}
+		    {{if auth.user and auth.user.username=='it':}}
+	            <li><h5 class="text-danger">{{=comments[2]}}:<strong class="text-muted">{{=comments[3].strip()}}</strong><small>{{=' '+comments[4].strftime("%Y-%m-%d %H:%M")}}</small>
+		        {{=A('delete',_href=URL('delete_comment',args=comments[0]))}}
+		        {{=A('reply',_href=URL('reply_comment',args=comments[0],vars=dict(content=comments[3])))}}
+		    </h5></li>
+		    {{else:}}
+	            <li><h5 class="text-danger">{{=comments[2][:1]+"**"}}:<strong class="text-muted">{{=comments[3].strip()}}</strong><small>{{=' '+comments[4].strftime("%Y-%m-%d %H:%M")}}</small>
+	    	    </h5></li>
+	            {{pass}}
+	        {{pass}}
+		{{if comments[5]:}}
+	            <h5 class="text-info">管理员回复:<strong class="text-muted">{{=comments[6]}}</strong><small>{{=' '+comments[7].strftime("%Y-%m-%d %H:%M")}}</small>
+		{{if auth.user and auth.user.username=='it':}}
+		    {{=A('delete',_href=URL('delete_replies',args=comments[8]))}}
+	        {{pass}}
+		</h5>
+	        {{pass}}
+	        {{last_comment = comments}}
+	    {{pass}}
+	{{pass}}
+	</ul>
+      </div>
+  {{pass}}
+  {{add_comment=True}}
+  {{if add_comment:}}
+      <div class="panel panel-info">
+        <form class="form-horizontal col-xs-offset-1 col-sm-offset-1 col-lg-offset-1" role="form">
+          <div class="form-group">
+            <label for="comment" class="col-sm-1 control-label">您的需求:</label>
+            <div class="col-sm-3">
+              <textarea name="comment" class="form-control" id="comment" placeholder="请详细描述您的需求，以便于管理员评估!"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-default col-sm-offset-2">提交</button>
+          </div>
+        </form>
+      </div>
+  {{pass}}
+  </div>
+</div>
+</div>

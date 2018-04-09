@@ -1,0 +1,135 @@
+{{extend 'layout.html'}}
+<div class = "container">
+    <h1>{{=page_title}}</h1>
+    <div class="row">
+        <div class="col-md-12 bg-info">
+	    <ul id="myTab" class="nav nav-tabs nav-justified">
+	        <li class="active"><a href="#gx" data-toggle="tab">个险报表<span class="badge pull-right">共{{=len([name for name in result if name[5]==1])}}个报表</span></a></li>
+	        <li><a href="#yb" data-toggle="tab">银保报表<span class="badge pull-right">共{{=len([name for name in result if name[5]==2])}}个报表</span></a></li>
+	        <li><a href="#all" data-toggle="tab">综合报表<span class="badge pull-right">共{{=len([name for name in result if name[5]==3])}}个报表</span></a></li>
+	        <li><a href="#it" data-toggle="tab">IT成果<span class="badge pull-right">共{{=len([name for name in result if name[5]==5])}}个报表</span></a></li>
+	    </ul>
+	    <div id="myTabContent" class="tab-content">
+	        <div class="tab-pane fade in active" id="gx">
+		    <table class="table">
+	            <!--<ul class="nav nav-pills nav-justified"> --!>
+		         {{i=0}}
+		         {{for report in result:}}
+		             {{if report[5]==1:}}
+		                 {{i = (i or 0) + 1}}
+		                 {{if i % 2 == 1:}}
+				     <tr>
+		                 {{pass}}
+		                 <!--web2py报表--!>
+		                 {{if report[4]=="web2py":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--birt报表--!>
+		                 {{if report[4]=="birt":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_birt/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--vba报表--!>
+		                 {{if report[4]=="vba":}}
+		                     <!--<td><h5>{{=A(report[0],_href=URL('visit_vba',args=report[2]))}}</h5></td>--!>
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_vba/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 {{if i % 2 == 0:}}
+		                     </tr >
+		                 {{pass}}
+		             {{pass}}
+	                 {{pass}}
+	             </table>
+                 </div>
+	         <div class="tab-pane fade " id="yb">
+		    <table class="table">
+		         {{i=0}}
+		         {{for report in result:}}
+		             {{if report[5]==2:}}
+		                 {{i = (i or 0) + 1}}
+		                 {{if i % 2 == 1:}}
+				     <tr>
+		                 {{pass}}
+		                 <!--web2py报表--!>
+		                 {{if report[4]=="web2py":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--birt报表--!>
+		                 {{if report[4]=="birt":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_birt/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--vba报表--!>
+		                 {{if report[4]=="vba":}}
+		                     <!--<td><h5>{{=A(report[0],_href=URL('visit_vba',args=report[2]))}}</h5></td>--!>
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_vba/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 {{if i % 2 == 0:}}
+		                     </tr >
+		                 {{pass}}
+		             {{pass}}
+	                 {{pass}}
+	             </table>
+                 </div>
+	         <div class="tab-pane fade " id="all">
+		    <table class="table">
+		         {{i=0}}
+		         {{for report in result:}}
+		             {{if report[5]==3:}}
+		                 {{i = (i or 0) + 1}}
+		                 {{if i % 2 == 1:}}
+				     <tr>
+		                 {{pass}}
+		                 <!--web2py报表--!>
+		                 {{if report[4]=="web2py":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--birt报表--!>
+		                 {{if report[4]=="birt":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_birt/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--vba报表--!>
+		                 {{if report[4]=="vba":}}
+		                     <!--<td><h5>{{=A(report[0],_href=URL('visit_vba',args=report[2]))}}</h5></td>--!>
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_vba/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 {{if i % 2 == 0:}}
+		                     </tr >
+		                 {{pass}}
+		             {{pass}}
+	                 {{pass}}
+	             </table>
+		 </div>
+	         <div class="tab-pane fade " id="it">
+	             <table class="table">
+		         {{i=0}}
+		         {{for report in result:}}
+		             {{if report[5]==5:}}
+		                 {{i = (i or 0) + 1}}
+		                 {{if i % 2 == 1:}}
+				     <tr>
+		                 {{pass}}
+		                 <!--web2py报表--!>
+		                 {{if report[4]=="web2py":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--birt报表--!>
+		                 {{if report[4]=="birt":}}
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_birt/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 <!--vba报表--!>
+		                 {{if report[4]=="vba":}}
+		                     <!--<td><h5>{{=A(report[0],_href=URL('visit_vba',args=report[2]))}}</h5></td>--!>
+				     <td><a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/visit_vba/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a></td>
+		                 {{pass}}
+		                 {{if i % 2 == 0:}}
+		                     </tr >
+		                 {{pass}}
+		             {{pass}}
+	                 {{pass}}
+	             </table>
+		 </div>
+	    </div>
+	</div>
+    </div>
+</div>
+
+

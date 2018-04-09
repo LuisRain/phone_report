@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+     <div class="col-xs-12">
+        <br />
+       <p>什么是推送消息<span class="glyphicon glyphicon-question-sign"></span> <br />系统提供了一些消息模板,当您需要经常查看某个模板数据时,就可以使用定制功能.系统将在您指定的时间,将消息推送至您的微信,以方便您查看.如现有的模板不能满足您的需求,请您留言,系统管理员会尽快处理您的请求.</p>
+    </div>
+</div>
+<div class="row">
+     <div class="col-xs-12 col-md-12">
+        <h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+        {{=form}}
+    </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>我的推送消息</strong></h3> 
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+	        {{rank=1}}
+		{{for sensus in result:}}
+                    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                        {{pass}}
+		    {{i=0}}
+		    {{while i < len(sensus)-1:}}
+                        {{if i == 2:}}
+                            <td>{{=A(sensus[i],_href=URL('my_msg/429',args=sensus[i+2]))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i]}}</td>
+                        {{pass}}
+                        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

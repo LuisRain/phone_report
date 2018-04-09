@@ -1,0 +1,41 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+	<h6 class="text-right">{{=update_time}}</h6>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+                {{rank=1}}
+                {{for sensus in result:}}
+                    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                        {{pass}}
+                    {{i=0}}
+                    {{while i < len(sensus)-1:}}
+                        {{if i==0 and sensus[i] != "分公司":}}
+                            <td>{{=A(sensus[i],_href=URL('gx_ssyj_day_aracde/423',args=sensus[-1]))}}</td>
+                        {{elif i==0 and sensus[i] == "分公司":}}
+                            <td>{{=A(sensus[i],_href=URL('gx_ssyj_day_aracde_all/435',args=sensus[-1]))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i] or 0}}</td>
+                        {{pass}}
+                        {{i+=1}}
+                    {{pass}}
+                    </tr>
+                {{pass}}
+            </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

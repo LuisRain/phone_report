@@ -1,0 +1,104 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name1}}</strong></h3> 
+	<h5><strong>单位:万元。</strong><span>点击中支可以查看支公司数据</span></h5> 
+	<h5>总标保=鑫享标保+共享规保*0.1+其它险种标保</h5>
+	<h5>数据更新时间:{{=max_date}}</h5>
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead1:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+		{{for sensus in result1:}}
+		    {{if sensus[0]=="合计":}}
+		        <tr class="text-center success"> 
+		    {{else:}}
+		        <tr class="text-center "> 
+		    {{pass}}
+		
+		    {{i=0}}
+		    {{while i < len(sensus)-4:}}
+		        {{if i==0 and sensus[0] != "合计":}}
+		            <td>{{=A(sensus[i],_href=URL('gx_share_account_aracde/161',args=sensus[5]))}}</td> 
+		        {{elif i==4:}}
+		            <!--<td>{{=str(sensus[i])[:-2]+'%'}}</td> --!>
+		            <td>{{=sensus[i]}}</td> 
+		        {{else:}}
+		            <td>{{=sensus[i]}}</td> 
+		        {{pass}}
+		        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+  </div>
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name2}}</strong></h3> 
+	<h5>提示：<br />人力按总标保(定义同上)进行统计，占比按当前在册人力统计。</h5>
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead2:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+		{{for sensus in result2:}}
+		    {{if sensus[0]=="合计":}}
+		        <tr class="text-center success"> 
+		    {{else:}}
+		        <tr class="text-center "> 
+		    {{pass}}
+		
+		    {{i=0}}
+		    {{while i < len(sensus)-1:}}
+		        {{if i in [2,4,6]:}}
+		            <td>{{=str(sensus[i])+'%'}}</td> 
+		        {{else:}}
+		            <td>{{=sensus[i]}}</td> 
+		        {{pass}}
+		        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+  </div>
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name3}}</strong></h3> 
+	<h5>提示：尊享件数=1.2万件数-共享件数</h5>
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead3:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+		{{for sensus in result3:}}
+		    {{if sensus[0]=="合计":}}
+		        <tr class="text-center success"> 
+		    {{else:}}
+		        <tr class="text-center "> 
+		    {{pass}}
+		
+		    {{i=0}}
+		    {{while i < len(sensus)-1:}}
+		        {{if i in [6]:}}
+		            <td>{{=str(sensus[i])+'%'}}</td> 
+		        {{else:}}
+		            <td>{{=sensus[i]}}</td> 
+		        {{pass}}
+		        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

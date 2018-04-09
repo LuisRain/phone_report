@@ -1,0 +1,15 @@
+#main_bg{
+	background: url('/init/static/images/tk.jpg') no-repeat center center fixed;
+    	background-size: contain;
+	background-color:red;
+}
+#show_bg{
+	background: url('/init/static/images/tk.jpg') no-repeat center center fixed;
+    	background-size: contain;
+}
+.block {
+	background-color:rgba(0,0,0,0.2);
+	height:370px;
+  	padding-left:12px;
+  	padding-right:12px;
+}

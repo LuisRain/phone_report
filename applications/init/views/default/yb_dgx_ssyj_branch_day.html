@@ -1,0 +1,46 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+        <h5>提示:由于银保系列当日业绩数据不完整，此报表中的数据仅供参考。</h5>
+	<h6 class="text-right">报表时间:{{=request.now.strftime("%Y-%m-%d %H:%M")}}</h6>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+                {{rank=1}}
+                {{for sensus in result:}}
+                    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                        {{pass}}
+                    {{i=0}}
+                    {{while i < len(sensus)-1:}}
+                        {{if i==1 and sensus[0] not in ["分公司","FIC"]:}}
+                            <td>{{=A(sensus[i],_href=URL('yb_chdr_list/361/SQ',args=sensus[-1]))}}</td>
+                        {{elif i==1 and sensus[0] == "FIC":}}
+                            <td>{{=A(sensus[i],_href=URL('yb_chdr_list/361/FIC',args=sensus[-1]))}}</td>
+                        {{elif i==2 and sensus[0] not in ["分公司","FIC"]:}}
+                            <td>{{=A(sensus[i],_href=URL('yb_chdr_list/361/TZ',args=sensus[-1]))}}</td>
+                        {{elif i==2 and sensus[0] == "FIC":}}
+                            <td>{{=A(sensus[i],_href=URL('yb_chdr_list/361/FIC',args=sensus[-1]))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i]}}</td>
+                        {{pass}}
+                        {{i+=1}}
+                    {{pass}}
+                    </tr>
+                {{pass}}
+            </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

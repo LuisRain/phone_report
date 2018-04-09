@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+	<h5 class="text-left lead">说明:<br />1.6千件数=标保在6000--12000(不含)的件数;1.2万件数=标保大于等于1.2万的件数.<br />2.只统计9号及之后的受理数据.</strong></h5> 
+	<h6 class="text-right">{{=update_time}}</h6>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+                {{rank=1}}
+                {{for sensus in result:}}
+                    {{if sensus[0]=="分公司":}}
+                        <tr class="text-center success">
+                    {{else:}}
+                        <tr class="text-center ">
+                        {{pass}}
+                    {{i=0}}
+                    {{while i < len(sensus)-1:}}
+                        {{if i==10 :}}
+                            <td>{{=A(sensus[i],_href=URL('ycb_hpad_aracde/474',args=sensus[-1]))}}</td>
+                        {{else:}}
+                            <td>{{=sensus[i]}}</td>
+                        {{pass}}
+                        {{i+=1}}
+                    {{pass}}
+                    </tr>
+                {{pass}}
+            </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

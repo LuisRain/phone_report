@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+<div class="row">
+  <div class="col-xs-4">
+      <b>{{=star[0][0]}}评价</b>
+  </div>
+  <div class="col-xs-4">
+  </div>
+  <div class="col-xs-4 col-xs-offset+1">
+       <b>{{=A('定制推送消息',_href=URL('admin_custom_msg',args=request.args(0)))}}</b> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-3">
+    {{=form}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+	        {{rank=1}}
+		{{for sensus in result:}}
+		    <tr class="text-center "> 
+		    {{i=0}}
+		    {{while i < len(sensus[:-1]):}}
+		        {{if i==2:}}
+			    <td>{{=A(sensus[i],_href=URL('curr_chdr_list/83',args=sensus[-1]))}}</td>
+			{{else:}}
+		            <td>{{=sensus[i]}}</td> 
+		        {{pass}}
+		        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
+</div>

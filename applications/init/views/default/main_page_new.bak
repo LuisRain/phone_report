@@ -1,0 +1,123 @@
+{{extend 'layout.html'}}
+<body id="myimg">
+<div class = "container-fluid ">
+    <div class="row">
+        <h3 class="head text-center">信息定制交互平台</h3>
+        <hr style=" height:1px;border-top:1px ridge green;" />
+    </div>
+    <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+                <div class="bnt text-center">{{=A('我的需求',_href=URL('report_request',args='81'))}}</div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+                <div class="bnt text-center">{{=A('推送消息',_href=URL('my_msg',args='429'))}}</div>
+            </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <!--假日经营--!>
+	<div class="span5 offsetHalf block">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 春节假日经营 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==86:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+        </div>
+
+        <!--金泰杯--!>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 常用报表 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==81:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+
+        <!--个险报表--!>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 个险报表 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==1:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+
+        <!--银保报表--!>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 银保报表 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==2:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+
+        <!--监控报表--!>
+       {{if auth.user and 'it' in auth.user_groups.values():}}
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 监控报表 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==82:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+        {{pass}}
+
+        <!--其它报表--!>
+       {{if request.client != "10.19.1.202":}}
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> 
+        <div class="panel panel-primary">
+	    <div class="panel-heading">
+		<h4 > 其它报表 </h4>
+	    </div>
+	    <div class="panel-body">
+            {{for report in result:}}
+                {{if report[4]==83:}}
+	            <a class="list-group-item" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><p>{{=report[0]}}</p></a>
+	        {{pass}}
+            {{pass}}
+	    </div>
+        </div>
+        </div>
+        {{pass}}
+
+
+    </div>
+</div>
+</body>

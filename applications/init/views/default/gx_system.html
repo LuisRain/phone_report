@@ -1,0 +1,35 @@
+{{extend 'layout.html'}}
+<!--主页--!>
+{{block header}}
+    <header class="container-fluid bg-info">
+    <div class="jumbotron text-center">
+        {{if response.title:}}
+            <h4>个险七大体系报表 <small>{{=response.subtitle or ''}}</small></h4>
+        {{pass}}
+    </div>
+    </header>
+<div>
+
+<div class = "container-fluid bg-info">
+    <br />
+    <div class="row">
+        <div class="col-md-6 bg-info ">
+	  <div class="panel-group" id="accordion">
+	    <!--个险部分--!>
+	    <div class="panel panel-default">
+	        <div class="panel-heading">
+		    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true">{{=page_title}}</span></a></h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in">
+		    <div class="panel-body">
+		        {{for report in result:}}
+			    <a class="btn" href="http://{{=request.env.http_host}}/{{=request.application}}/{{=request.controller}}/{{=report[1]}}/{{=report[2]}}"><abbr title ="报表代码:{{=report[1]}}; 访问量:{{=report[3]}}; 有效日期:{{=report[6]}}">{{=report[0]}}</abbr></a><br />
+	                {{pass}}
+		    </div>
+		</div>
+	    </div>
+	    <!--个险结束--!>
+	</div>
+    </div>
+</div>
+

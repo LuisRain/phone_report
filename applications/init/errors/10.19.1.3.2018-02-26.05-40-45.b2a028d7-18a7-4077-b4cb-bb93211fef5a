@@ -1,0 +1,367 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'Framework'
+p4
+sS'code'
+p5
+S''
+sS'snapshot'
+p6
+(dp7
+S'exception'
+p8
+(dp9
+S'__getslice__'
+p10
+S"<method-wrapper '__getslice__' of exceptions.TypeError object>"
+p11
+sS'__str__'
+p12
+S"<method-wrapper '__str__' of exceptions.TypeError object>"
+p13
+sS'__reduce__'
+p14
+S'<built-in method __reduce__ of exceptions.TypeError object>'
+p15
+sS'__dict__'
+p16
+S'{}'
+p17
+sS'message'
+p18
+S"'getattr(): attribute name must be string'"
+p19
+sS'__sizeof__'
+p20
+S'<built-in method __sizeof__ of exceptions.TypeError object>'
+p21
+sS'__init__'
+p22
+S"<method-wrapper '__init__' of exceptions.TypeError object>"
+p23
+sS'__setattr__'
+p24
+S"<method-wrapper '__setattr__' of exceptions.TypeError object>"
+p25
+sS'__reduce_ex__'
+p26
+S'<built-in method __reduce_ex__ of exceptions.TypeError object>'
+p27
+sS'__new__'
+p28
+S'<built-in method __new__ of type object>'
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.TypeError object>'
+p31
+sS'__class__'
+p32
+S"<type 'exceptions.TypeError'>"
+p33
+sS'__doc__'
+p34
+S"'Inappropriate argument type.'"
+p35
+sS'__getitem__'
+p36
+S"<method-wrapper '__getitem__' of exceptions.TypeError object>"
+p37
+sS'__setstate__'
+p38
+S'<built-in method __setstate__ of exceptions.TypeError object>'
+p39
+sS'__getattribute__'
+p40
+S"<method-wrapper '__getattribute__' of exceptions.TypeError object>"
+p41
+sS'args'
+p42
+S"('getattr(): attribute name must be string',)"
+p43
+sS'__subclasshook__'
+p44
+S'<built-in method __subclasshook__ of type object>'
+p45
+sS'__unicode__'
+p46
+S'<built-in method __unicode__ of exceptions.TypeError object>'
+p47
+sS'__delattr__'
+p48
+S"<method-wrapper '__delattr__' of exceptions.TypeError object>"
+p49
+sS'__repr__'
+p50
+S"<method-wrapper '__repr__' of exceptions.TypeError object>"
+p51
+sS'__hash__'
+p52
+S"<method-wrapper '__hash__' of exceptions.TypeError object>"
+p53
+ssS'evalue'
+p54
+S'getattr(): attribute name must be string'
+p55
+sS'request'
+p56
+ccopy_reg
+_reconstructor
+p57
+(cgluon.html
+XML
+p58
+c__builtin__
+object
+p59
+NtRp60
+(dp61
+S'text'
+p62
+S'<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>init</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">CONTEXT_DOCUMENT_ROOT</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTEXT_PREFIX</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">DOCUMENT_ROOT</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">GATEWAY_INTERFACE</td><td style="vertical-align:top;">:</td><td><div>CGI/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_PROXY_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>Keep-Alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>PycURL/7.43.0 libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_TRANSLATED</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/wsgihandler.py/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>35179</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>CONNECT</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_SCHEME</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_URI</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_FILENAME</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/wsgihandler.py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_ADDR</td><td style="vertical-align:top;">:</td><td><div>10.19.19.108</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_ADMIN</td><td style="vertical-align:top;">:</td><td><div>root@localhost</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SIGNATURE</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_wsgi/3.4 Python/2.7.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">UNIQUE_ID</td><td style="vertical-align:top;">:</td><td><div>WpMtXfawUV0aMVElsY1tewAAAAA</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/opt/web-apps/web2py/applications/init/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">context_document_root</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">context_prefix</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">document_root</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gateway_interface</td><td style="vertical-align:top;">:</td><td><div>CGI/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_proxy_connection</td><td style="vertical-align:top;">:</td><td><div>Keep-Alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>PycURL/7.43.0 libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.application_group</td><td style="vertical-align:top;">:</td><td><div>fe80::d6cd:57e1:9592:97c9|</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.callable_object</td><td style="vertical-align:top;">:</td><td><div>application</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.enable_sendfile</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.handler_script</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.input_chunked</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.listener_host</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.listener_port</td><td style="vertical-align:top;">:</td><td><div>8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.process_group</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.queue_start</td><td style="vertical-align:top;">:</td><td><div>1519594845542014</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.request_handler</td><td style="vertical-align:top;">:</td><td><div>wsgi-script</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.script_reloading</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>3</div></td></tr><tr><td><div>4</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_application_group</td><td style="vertical-align:top;">:</td><td><div>fe80::d6cd:57e1:9592:97c9|</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_callable_object</td><td style="vertical-align:top;">:</td><td><div>application</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_enable_sendfile</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_handler_script</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_input_chunked</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_listener_host</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_listener_port</td><td style="vertical-align:top;">:</td><td><div>8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_process_group</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_queue_start</td><td style="vertical-align:top;">:</td><td><div>1519594845542014</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_request_handler</td><td style="vertical-align:top;">:</td><td><div>wsgi-script</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_script_reloading</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>3</div></td></tr><tr><td><div>4</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_translated</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/wsgihandler.py/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>35179</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>CONNECT</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_filename</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/wsgihandler.py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_addr</td><td style="vertical-align:top;">:</td><td><div>10.19.19.108</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_admin</td><td style="vertical-align:top;">:</td><td><div>root@localhost</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>www.baidu.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_signature</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_wsgi/3.4 Python/2.7.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">unique_id</td><td style="vertical-align:top;">:</td><td><div>WpMtXfawUV0aMVElsY1tewAAAAA</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.2-stable+timestamp.2017.07.19.12.18.41</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Log object at 0x7f86a8153e30&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f86c95a1a80&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Input object at 0x7f86a8153df0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Log object at 0x7f86a8153e30&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f86c95a1a80&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Input object at 0x7f86a8153df0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/applications/init/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/opt/web-apps/web2py/applications/init/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>phone_report</div></td></tr><tr><td><div>cn.bing.com</div></td></tr><tr><td><div>202.89.233.100</div></td></tr><tr><td><div>fe80::d6cd:57e1:9592:97c9%ens192</div></td></tr><tr><td><div>10.19.19.108</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>fe80::5a40:b518:1857:e709%ens192</div></td></tr><tr><td><div>192.168.122.1</div></td></tr><tr><td><div>202.89.233.101</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.2-stable+timestamp.2017.07.19.12.18.41</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2018, 2, 26, 5, 40, 45, 543160)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2018, 2, 25, 21, 40, 45, 543218)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7f86c9590550&gt;</div></td></tr></table></div>'
+p63
+sbsS'frames'
+p64
+(lp65
+(dp66
+S'file'
+p67
+S'/opt/web-apps/web2py/gluon/main.py'
+p68
+sS'dump'
+p69
+(dp70
+S'session.connect'
+p71
+S'<bound method Session.connect of <Storage {}>>'
+p72
+sS'session'
+p73
+S'<Storage {}>'
+p74
+sS'request'
+p75
+S"<Storage {'_vars': None, 'function': 'index', 'c...der': '/opt/web-apps/web2py/applications/init/'}>"
+p76
+sS'response'
+p77
+S"<Storage {'body': <cStringIO.StringO object at 0..._caller': <function <lambda> at 0x7f86c95a12a8>}>"
+p78
+ssS'lnum'
+p79
+I434
+sS'lines'
+p80
+(dp81
+I429
+S'                # ##################################################'
+p82
+sI430
+S'                # try load session or create new session file'
+p83
+sI431
+S'                # ##################################################'
+p84
+sI432
+S''
+sI433
+S'                if not env.web2py_disable_session:'
+p85
+sI434
+S'                    session.connect(request, response)'
+p86
+sI435
+S''
+sI436
+S'                # ##################################################'
+p87
+sI437
+S'                # run controller'
+p88
+sI438
+S'                # ##################################################'
+p89
+ssS'call'
+p90
+S"(environ={'CONTEXT_DOCUMENT_ROOT': '/var/www/html', 'CONTEXT_PREFIX': '', 'DOCUMENT_ROOT': '/var/www/html', 'GATEWAY_INTERFACE': 'CGI/1.1', 'HTTP_HOST': 'www.baidu.com:443', 'HTTP_PROXY_CONNECTION': 'Keep-Alive', 'HTTP_USER_AGENT': 'PycURL/7.43.0 libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3', 'PATH_INFO': '/', 'PATH_TRANSLATED': '/opt/web-apps/web2py/wsgihandler.py/', 'QUERY_STRING': '', ...}, responder=<built-in method start_response of mod_wsgi.Adapter object>)"
+p91
+sS'func'
+p92
+S'wsgibase'
+p93
+sa(dp94
+g67
+S'/opt/web-apps/web2py/gluon/globals.py'
+p95
+sg69
+(dp96
+S'global pickle'
+p97
+S"<module 'cPickle' from '/usr/lib64/python2.7/lib-dynload/cPickle.so'>"
+p98
+sS'self'
+p99
+S'<Storage {}>'
+p100
+sS'pickle.HIGHEST_PROTOCOL'
+p101
+S'2'
+sS'session_pickled'
+p102
+S'undefined'
+p103
+sS'pickle.dumps'
+p104
+S'<built-in function dumps>'
+p105
+ssg79
+I956
+sg80
+(dp106
+I960
+S'            (response.flash, self.flash) = (self.flash, None)'
+p107
+sI951
+S"            response.cookies[response.session_id_name]['path'] = '/'"
+p108
+sI952
+S'            if cookie_expires:'
+p109
+sI953
+S"                response.cookies[response.session_id_name]['expires'] = \\"
+p110
+sI954
+S'                    cookie_expires.strftime(FMT)'
+p111
+sI955
+S''
+sI956
+S'        session_pickled = pickle.dumps(self, pickle.HIGHEST_PROTOCOL)'
+p112
+sI957
+S'        response.session_hash = hashlib.md5(session_pickled).hexdigest()'
+p113
+sI958
+S''
+sI959
+S'        if self.flash:'
+p114
+ssg90
+S"(self=<Storage {}>, request=<Storage {'_vars': None, 'function': 'index', 'c...der': '/opt/web-apps/web2py/applications/init/'}>, response=<Storage {'body': <cStringIO.StringO object at 0..._caller': <function <lambda> at 0x7f86c95a12a8>}>, db=None, tablename='web2py_session', masterapp='init', migrate=True, separate=None, check_client=False, cookie_key=None, cookie_expires=None, compression_level=None)"
+p115
+sg92
+S'connect'
+p116
+sa(dp117
+g67
+S'/opt/web-apps/web2py/gluon/storage.py'
+p118
+sg69
+(dp119
+S').__getnewargs__'
+p120
+S'<bound method Session.<lambda> of <Storage {}>>'
+p121
+sS'self'
+p122
+S'<Storage {}>'
+p123
+sS'__getnewargs__'
+p124
+g103
+sS'builtingetattr'
+p125
+S'<built-in function getattr>'
+p126
+sS'builtindict'
+p127
+S"<type 'dict'>"
+p128
+ssg79
+I52
+sg80
+(dp129
+I47
+S'    __slots__ = ()'
+p130
+sI48
+S'    __setattr__ = dict.__setitem__'
+p131
+sI49
+S'    __delattr__ = dict.__delitem__'
+p132
+sI50
+S'    __getitem__ = dict.get'
+p133
+sI51
+S'    __getattr__ = dict.get'
+p134
+sI52
+S'    __getnewargs__ = lambda self: getattr(dict,self).__getnewargs__(self)'
+p135
+sI53
+S"    __repr__ = lambda self: '<Storage %s>' % dict.__repr__(self)"
+p136
+sI54
+S'    # http://stackoverflow.com/questions/5247250/why-does-pickle-getstate-accept-as-a-return-value-the-very-instance-it-requi'
+p137
+sI55
+S'    __getstate__ = lambda self: None'
+p138
+sI56
+S'    __copy__ = lambda self: Storage(self)'
+p139
+ssg90
+S'(self=<Storage {}>)'
+p140
+sg92
+S'<lambda>'
+p141
+sasS'pyver'
+p142
+S'Python 2.7.5: /usr/bin/python (prefix: /usr)'
+p143
+sS'session'
+p144
+g57
+(g58
+g59
+NtRp145
+(dp146
+g62
+S'<div><table></table></div>'
+p147
+sbsS'etype'
+p148
+S"<type 'exceptions.TypeError'>"
+p149
+sS'date'
+p150
+S'Mon Feb 26 05:40:45 2018'
+p151
+sS'response'
+p152
+g57
+(g58
+g59
+NtRp153
+(dp154
+g62
+S'<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7f86c958ed18&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_init</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3-69eb6f04-0b32-4da4-bee5-195ef7071ceb<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_init</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/opt/web-apps/web2py/applications/init/sessions/10.19.1.3-69eb6f04-0b32-4da4-bee5-195ef7071ceb</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>10.19.1.3-69eb6f04-0b32-4da4-bee5-195ef7071ceb</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_init</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>init</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr></table></div>'
+p155
+sbsS'locals'
+p156
+(dp157
+S'self'
+p158
+S'<Storage {}>'
+p159
+sssS'traceback'
+p160
+S'Traceback (most recent call last):\n  File "/opt/web-apps/web2py/gluon/main.py", line 434, in wsgibase\n    session.connect(request, response)\n  File "/opt/web-apps/web2py/gluon/globals.py", line 956, in connect\n    session_pickled = pickle.dumps(self, pickle.HIGHEST_PROTOCOL)\n  File "/opt/web-apps/web2py/gluon/storage.py", line 52, in <lambda>\n    __getnewargs__ = lambda self: getattr(dict,self).__getnewargs__(self)\nTypeError: getattr(): attribute name must be string\n'
+p161
+s.

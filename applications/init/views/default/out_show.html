@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+<h3 class="text-center lead"><strong>支出信息表</strong></h3> 
+<div class="row">
+<div class="col-md-10">
+<table class="table table-hover table-bordered "> 
+    <thead > 
+        {{for head in head:}}
+	<th class="text-center success">{{=head}}</th> 
+	{{pass}}
+    </thead> 
+    <tbody> 
+    	{{for page in result:}}
+        <tr class="text-center"> 
+	{{i=0}}
+	{{while i < len(page):}}
+	    <td>{{=page[i]}}</td> 
+	    {{i+=1}}
+	    {{pass}}
+	</tr>
+	{{pass}}
+	<p class="text-info">共计{{=len(result)}}条记录</p>
+</table>
+</div>
+<div class="col-md-2">
+{{=form}}
+</div>
+</div>

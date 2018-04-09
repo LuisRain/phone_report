@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+  <div class="col-md-2">
+    <br />
+    {{=form}}
+  </div>
+  <div class="col-md-10">
+	<h3 class="text-center bg-waring"><strong>{{=list_message}}
+	{{if down_url:}}
+	<a href={{=down_url}}><span class="glyphicon glyphicon glyphicon-cloud-download"></span>下载</a>
+	{{pass}}</strong></h3>
+  </div>
+</div>
+</div>

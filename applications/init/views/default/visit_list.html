@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong></h3> 
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+		{{for sensus in all_comments:}}
+		    <tr class="text-center ">
+		        <td>{{=sensus[0] or ''}}</td>
+		        <td>{{=sensus[1] or ''}}</td>
+		        <td>{{=sensus[2] or ''}}</td>
+		        <td>{{=sensus[3] or ''}}</td>
+		        <td>{{=sensus[4] or ''}}</td>
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+	<h3 class="text-center lead"><strong>{{=report_name}}</strong><small>{{=' '+request.now.strftime("%Y-%m-%d %H:%M")}}</small></h3>
+	<small>
+	报表说明：<br />
+	1.报表为月报表，每天早上8点更新截止到昨天数据;<br />
+	2.总件数为承保新单单件标保>0件数;<br />
+	3.单件3000P件数为承保新单单件标保>=3000P的件数;<br />
+	4.6000P件数为承保新单累计标保>=6000P的件数;<br />
+	5.万P件数为承保新单累计标保>=10000P的件数;<br />
+	6.点击中支可查看支公司数据.
+	</small>
+	<div class="panel panel-info">
+	<table class="table table-hover table-bordered table-condensed"> 
+	    <thead>
+	    {{for head in tableHead:}}
+		<th class="text-center info">{{=head}}</th>
+		{{pass}}
+	    </thead>
+	    <tbody> 
+		{{for sensus in result:}}
+		    {{if sensus[0]=="合计":}}
+		        <tr class="text-center success"> 
+		    {{else:}}
+		        <tr class="text-center "> 
+		    {{pass}}
+		
+		    {{i=0}}
+		    {{while i < len(sensus)-1:}}
+		        {{if i==0 and sensus[0] != "合计":}}
+		            <td>{{=A(sensus[i],_href=URL('gx_js_29_aracde/301',args=sensus[5]))}}</td> 
+		        {{elif i>=1:}}
+		            <!--<td>{{=str(sensus[i])[:-2]+'%'}}</td> --!>
+		            <td>{{=int(sensus[i])}}</td> 
+		        {{else:}}
+		            <td>{{=sensus[i]}}</td> 
+		        {{pass}}
+		        {{i+=1}}
+		    {{pass}}
+		    </tr>
+		{{pass}}
+	    </tbody>
+	</table>
+	</div>
+  </div>
+  {{include 'comment_template.html'}}
+</div>
